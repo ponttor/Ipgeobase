@@ -1,35 +1,22 @@
-# Ipgeobase
+## Ipgeobase
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ipgeobase`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Actions Status](https://github.com/ponttor/Ipgeobase/workflows/Ruby/badge.svg)](https://github.com/ponttor/ipgeo/actions)
 
-TODO: Delete this and the text above, and describe your gem
+Гем, который возвращает метаданные об IP. Гем содержит метод `lookup('8.8.8.8')`, который принимает IP-адрес и возвращает объект метаданных.
 
-## Installation
+В метаданных содержатся следующие поля:
 
-Add this line to your application's Gemfile:
+* `city` - город
+* `country` - страна
+* `countryCode` - код страны
+* `lat` - ширина
+* `lon` - долгота
 
 ```ruby
-gem 'ipgeobase'
+ip_meta = Ipgeobase.lookup('8.8.8.8')
+ip_meta.city # Ashburn
+ip_meta.country # United States
+ip_meta.countryCode # US
+ip.lat # 39.03
+ip.lon # -77.5
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install ipgeobase
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ipgeobase.
