@@ -1,6 +1,6 @@
 ## Ipgeobase
 
-[![Actions Status](https://github.com/ponttor/Ipgeobase/workflows/Ruby/badge.svg)](https://github.com/ponttor/ipgeo/actions)
+[![Actions Status](https://github.com/ponttor/Ipgeobase/workflows/Ruby/badge.svg)](https://github.com/ponttor/Ipgeobase/actions)
 
 Гем, который возвращает метаданные об IP. Гем содержит метод `lookup('8.8.8.8')`, который принимает IP-адрес и возвращает объект метаданных.
 
