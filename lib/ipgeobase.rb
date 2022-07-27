@@ -14,6 +14,3 @@ module Ipgeobase
     HappyMapper.parse(xml)
   end
 end
-
-# ip_meta = Ipgeobase.lookup('8.8.8.8')
-# p ip_meta.city

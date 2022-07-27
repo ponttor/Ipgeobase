@@ -7,21 +7,18 @@ class TestIpgeobase < Minitest::Test
     refute_nil ::Ipgeobase::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
-  end
-
   def test_get_data_from_ip
+    ip_address = "8.8.8.8"
+    uri = URI("http://ip-api.com/xml/#{ip_address}")
+
+    stub_request(:get, uri)
+      .to_return(body: File.read('test/fixtures/response.xml'), status: 200)  
+
     data = Ipgeobase.lookup('8.8.8.8')
-    p 'Ashburn' == data.city
     assert { 'Ashburn' == data.city }
     assert { 'United States' == data.country }
-    assert { 'US' == data.countryCode }
+    assert { 'US' == data.country_code }
     assert { '39.03' == data.lat.to_s }
     assert { '-77.5' == data.lon.to_s }
-    ip_meta.country # United States
-    ip_meta.countryCode # US
-    ip.lat # 39.03
-    ip.lon # -77.5
   end
 end
